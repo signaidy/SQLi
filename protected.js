@@ -39,6 +39,9 @@ app.post('/login', (req, res) => {
 db.serialize(() => {
     db.run(`CREATE TABLE users (id INTEGER PRIMARY KEY, username TEXT, password TEXT)`);
     db.run(`INSERT INTO users (username, password) VALUES ('admin', 'admin123')`);
+    db.run(`INSERT INTO users (username, password) VALUES ('user1', 'password1')`);
+    db.run(`INSERT INTO users (username, password) VALUES ('user2', 'password2')`);
+    db.run(`INSERT INTO users (username, password) VALUES ('user3', 'password3')`);
 });
 
 module.exports = app;
